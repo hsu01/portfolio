@@ -5,6 +5,8 @@ import About from "./About";
 import Navbar from "./navbar";
 import Job from "./Job";
 import Education from "./Education";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 function App() {
   useEffect(() => {
@@ -20,6 +22,9 @@ function App() {
        <About />
        <Job />
        <Education />
+       <Projects />
+       <Contact />
+
 
 
   </div>
