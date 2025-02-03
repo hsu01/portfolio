@@ -1,4 +1,6 @@
 import React from "react";
+import ClickTheMallImage from "./clickthemall.jpg"; // Correct path
+
 
 function Job() {
   return (
@@ -343,9 +345,9 @@ function Job() {
     style={{ textDecoration: "none" }}
   >
     <img
-      src="https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/326540164_1285679908649821_1253814587433546366_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=3CFnwrLXS7YQ7kNvgHVzYGt&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=Aqe94oBeUz2_rLtgraZ5yR7&oh=00_AYBHNrzjcJeOw1O4D-QjLClriFaa9JwNpok1XoV1qwGVyA&oe=6777AFE4"
+      src={ClickTheMallImage}
       alt="Click the Mall Snacks Bar"
-      style={{ width: "200px", height: "200px", borderRadius: "5px" }}
+      style={{ width: "200px", height: "200px", borderRadius: "5px", cursor: "pointer" }}
     />
   </a>
   <div>
