@@ -10,8 +10,16 @@ function Education() {
       color: "#A97155",
     },
     {
-      title: "All Washington Academic Team: $9,000 Scholarship",
-      institution: "Phi Theta Kappa Honor Society - One of the top 16 students in Washington State",
+      title: "Microsoft Endowed Scholarship",
+      institution: "Microsoft - Awarded $2,000 to outstanding students pursuing degrees in Computer Science at Paul G Allen School of Comptuer Science and Engineering",
+      date: "2025",
+      icon: "🏆",
+      color: "#BC7C7C",
+      isAward: true,
+    },
+    {
+      title: "2024 All Washington Academic Team  Scholarship",
+      institution: "Phi Theta Kappa Honor Society - Awarded $9,000 to top 16 college students in Washington State",
       date: "2024",
       icon: "🏆",
       color: "#BC7C7C",
