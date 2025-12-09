@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Hsu Wai Hnin Kyaw — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site: https://hsu01.github.io/portfolio  
+One-page React portfolio highlighting my background, projects, and ways to connect.
 
-## Available Scripts
+## What’s Inside
+- About: intro, quick bio, CTA buttons linking to work and contact.
+- Sticky glassy navbar with smooth section scroll and resume link.
+- Work experience: animated cards describing roles (Amazon SDE intern, UW, freelance interpreting, entrepreneurship).
+- Education timeline: degrees plus scholarship badges.
+- Projects gallery: alternating cards with tech stack pills, external links, and preview images.
+- Contact panel: quick links to GitHub, LinkedIn, email, and Instagram.
 
-In the project directory, you can run:
+## Tech Stack
+- React 18 (Create React App)
+- Styling via component-level inline styles, CSS gradients, and AOS animations
+- `react-scroll` for smooth navigation
+- Deployed to GitHub Pages via `gh-pages`
 
-### `npm start`
+## Local Development
+```bash
+npm install
+npm start      # runs at http://localhost:3000
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Build & Deploy
+```bash
+npm run build          # production bundle -> build/
+npm run deploy         # builds + publishes to GitHub Pages
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Updating Content
+- Sections map to components in `src/`: `About.js`, `Job.js`, `Education.js`, `Projects.js`, `Contact.js`, `navbar.js`.
+- Data such as job history, education entries, project cards, and contact links live in arrays near the top of each component—edit those to refresh the content.
+- Public assets (project images, profile photo) are in `public/` or `src/`; update the `imageUrl` references in `Projects.js` if you add new media.
 
-### `npm test`
+## Notes
+- Animations are powered by AOS; adjust timing in `App.js` or component-specific `data-aos` attributes.
+- Mobile tweaks are in component-scoped `<style>` blocks for each section.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License
+MIT License — see `LICENSE` if you add one to the repo.
 
-### `npm run build`
+## Author
+Hsu Wai Hnin Kyaw  
+GitHub: [@hsu01](https://github.com/hsu01)  
+LinkedIn: [hsuwaihninkyaw](https://www.linkedin.com/in/hsuwaihninkyaw/)  
+Email: hsu01@uw.edu
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acknowledgments
+- Inspired by modern portfolio designs
+- Fonts: Google Fonts (Poppins, Martel)
+- Icons: emoji-based for simplicity
+- Animations: AOS library
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+⭐ Star this repo if you found it helpful!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️ and ☕ by Hsu
