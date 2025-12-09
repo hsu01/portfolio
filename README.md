@@ -38,9 +38,6 @@ npm run deploy         # builds + publishes to GitHub Pages
 - Animations are powered by AOS; adjust timing in `App.js` or component-specific `data-aos` attributes.
 - Mobile tweaks are in component-scoped `<style>` blocks for each section.
 
-## License
-MIT License — see `LICENSE` if you add one to the repo.
-
 ## Author
 Hsu Wai Hnin Kyaw  
 GitHub: [@hsu01](https://github.com/hsu01)  
