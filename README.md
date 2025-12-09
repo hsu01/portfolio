@@ -6,7 +6,7 @@ One-page React portfolio highlighting my background, projects, and ways to conne
 ## What’s Inside
 - About: intro, quick bio, CTA buttons linking to work and contact.
 - Sticky glassy navbar with smooth section scroll and resume link.
-- Work experience: animated cards describing roles (Amazon SDE intern, UW, freelance interpreting, entrepreneurship).
+- Work experience: animated cards describing roles.
 - Education timeline: degrees plus scholarship badges.
 - Projects gallery: alternating cards with tech stack pills, external links, and preview images.
 - Contact panel: quick links to GitHub, LinkedIn, email, and Instagram.
