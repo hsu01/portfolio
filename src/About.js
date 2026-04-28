@@ -149,13 +149,13 @@ function About() {
               margin: 0,
             }}
           >
-            Hey! I'm Hsu, a Computer Science senior at University of Washington Seattle, full stack developer, and part-time pixel perfectionist. 
-            I love building playful, intuitive interfaces—whether it's a campus map app, a pet playdate 
-            app, or a self-service policy onboarding system (shoutout to my Amazon internship 😌).
+            Hey! I'm Hsu, a Computer Science senior at University of Washington Seattle with a minor in Business Administration. 
+            I love building playful, intuitive interfaces whether it's a campus map app, a pet playdate 
+            app, or anything that looks pretty!
             <br /><br />
             I care a lot about good design, smooth user experiences, and solving real problems with a 
             mix of creativity and logic. Outside of code, you can find me traveling between Seattle and 
-            LA, hanging out with my friends, curating the best food spots, or fixing my resume at 3AM for absolutely no reason.
+            LA, making matcha, hanging out with my friends, or fixing my resume at 3AM for absolutely no reason.
           </p>
         </div>
 
