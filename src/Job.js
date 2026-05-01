@@ -2,6 +2,7 @@ import React from "react";
 import ClickTheMallImage from "./clickthemall.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { theme } from "./theme";
 
 // Modern JobCard Component with Glassmorphism
 const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, period, location, responsibilities, index }) => (
@@ -10,11 +11,11 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
     style={{
       display: "flex",
       alignItems: "flex-start",
-      background: "rgba(255, 255, 255, 0.85)",
-      backdropFilter: "blur(10px)",
-      borderRadius: "20px",
-      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
-      border: "1px solid rgba(255, 255, 255, 0.5)",
+      background: theme.colors.panel,
+      backdropFilter: "blur(18px)",
+      borderRadius: theme.radii.lg,
+      boxShadow: theme.shadows.soft,
+      border: `1px solid ${theme.colors.line}`,
       padding: "35px",
       gap: "30px",
       transition: "all 0.4s ease",
@@ -23,11 +24,11 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
     }}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = "translateY(-5px)";
-      e.currentTarget.style.boxShadow = "0 15px 45px rgba(169, 113, 85, 0.15)";
+      e.currentTarget.style.boxShadow = theme.shadows.glow;
     }}
     onMouseLeave={(e) => {
       e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.08)";
+      e.currentTarget.style.boxShadow = theme.shadows.soft;
     }}
   >
     {/* Decorative Accent */}
@@ -38,7 +39,7 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
         left: 0,
         width: "5px",
         height: "100%",
-        background: `linear-gradient(180deg, ${index % 2 === 0 ? "#A97155" : "#BC7C7C"} 0%, ${index % 2 === 0 ? "#BC7C7C" : "#A97155"} 100%)`,
+        background: index % 2 === 0 ? theme.gradients.accent : "linear-gradient(180deg, #ff8a65 0%, #7db8ff 100%)",
       }}
     />
 
@@ -63,7 +64,7 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
           height: "120px",
           borderRadius: "15px",
           objectFit: "cover",
-          boxShadow: "0 6px 20px rgba(0, 0, 0, 0.1)",
+          boxShadow: theme.shadows.accent,
         }}
         className="job-logo"
       />
@@ -75,10 +76,10 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
       <h2
         style={{
           fontSize: "24px",
-          background: "linear-gradient(135deg, #A97155 0%, #BC7C7C 100%)",
+          background: theme.gradients.accent,
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          fontFamily: "'Poppins', sans-serif",
+          fontFamily: theme.fonts.sans,
           fontWeight: "700",
           marginBottom: "8px",
           lineHeight: "1.3",
@@ -96,11 +97,12 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
             alignItems: "center",
             gap: "6px",
             padding: "6px 14px",
-            background: "rgba(169, 113, 85, 0.1)",
-            borderRadius: "20px",
+            background: "rgba(121, 247, 212, 0.1)",
+            borderRadius: theme.radii.pill,
             fontSize: "14px",
-            color: "#8C5C3C",
+            color: theme.colors.accent,
             fontWeight: "600",
+            border: `1px solid ${theme.colors.line}`,
           }}
         >
           <span>🏢</span> {company}
@@ -111,11 +113,12 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
             alignItems: "center",
             gap: "6px",
             padding: "6px 14px",
-            background: "rgba(188, 124, 124, 0.1)",
-            borderRadius: "20px",
+            background: "rgba(125, 184, 255, 0.12)",
+            borderRadius: theme.radii.pill,
             fontSize: "14px",
-            color: "#BC7C7C",
+            color: theme.colors.accentAlt,
             fontWeight: "600",
+            border: `1px solid ${theme.colors.line}`,
           }}
         >
           <span>📅</span> {period}
@@ -127,11 +130,12 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
               alignItems: "center",
               gap: "6px",
               padding: "6px 14px",
-              background: "rgba(169, 113, 85, 0.1)",
-              borderRadius: "20px",
+              background: "rgba(255, 138, 101, 0.12)",
+              borderRadius: theme.radii.pill,
               fontSize: "14px",
-              color: "#8C5C3C",
+              color: theme.colors.accentWarm,
               fontWeight: "600",
+              border: `1px solid ${theme.colors.line}`,
             }}
           >
             <span>📍</span> {location}
@@ -147,8 +151,8 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
           listStyle: "none",
           lineHeight: "1.8",
           fontSize: "15px",
-          color: "#555",
-          fontFamily: "'Martel', serif",
+          color: theme.colors.subtle,
+          fontFamily: theme.fonts.sans,
         }}
         className="job-responsibilities"
       >
@@ -169,7 +173,7 @@ const JobCard = ({ animation, logoUrl, logoAlt, companyUrl, title, company, peri
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                background: `linear-gradient(135deg, ${index % 2 === 0 ? "#A97155" : "#BC7C7C"} 0%, ${index % 2 === 0 ? "#BC7C7C" : "#A97155"} 100%)`,
+                background: index % 2 === 0 ? theme.gradients.accent : "linear-gradient(135deg, #ff8a65 0%, #7db8ff 100%)",
               }}
             />
             {item}
@@ -186,6 +190,19 @@ function Job() {
   }, []);
 
   const jobs = [
+    {
+      animation: "fade-up",
+      logoUrl: `${process.env.PUBLIC_URL}/expedia-group-logo.jpg`,
+      logoAlt: "Expedia Group",
+      companyUrl: "https://www.expediagroup.com/",
+      title: "Cloud Engineer Intern",
+      company: "Expedia Group",
+      period: "Jun 2026 - Aug 2026",
+      location: "Austin, TX",
+      responsibilities: [
+        "Incoming Cloud Engineering Intern focused on building scalable cloud infrastructure and distributed systems."
+      ]
+    },
     {
       animation: "fade-up",
       logoUrl: "https://policyviz.com/wp-content/uploads/2020/12/amazon-logo-square.jpg",
@@ -208,7 +225,7 @@ function Job() {
       companyUrl: "https://www.washington.edu/",
       title: "Student Office Assistant",
       company: "University of Washington",
-      period: "Apr 2025 - Present",
+      period: "Apr 2025 - Jun 2025",
       location: "Seattle, WA",
       responsibilities: [
         "Provided front-desk support for 100+ student inquiries weekly, covering RSO logistics, event planning, and campus policies.",
@@ -316,9 +333,10 @@ function Job() {
   return (
     <section
       id="job"
+      className="section-shell"
       style={{
         padding: "80px 20px",
-        background: "linear-gradient(180deg, #E8D5C4 0%, #D4C2B4 100%)",
+        background: theme.gradients.section,
         position: "relative",
         overflow: "hidden",
       }}
@@ -332,7 +350,7 @@ function Job() {
           width: "450px",
           height: "450px",
           borderRadius: "50%",
-          background: "rgba(169, 113, 85, 0.06)",
+          background: "rgba(125, 184, 255, 0.12)",
           filter: "blur(100px)",
         }}
       />
@@ -342,10 +360,10 @@ function Job() {
         <h1
           style={{
             fontSize: "48px",
-            background: "linear-gradient(135deg, #A97155 0%, #BC7C7C 100%)",
+            background: theme.gradients.accent,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            fontFamily: "'Poppins', sans-serif",
+            fontFamily: theme.fonts.sans,
             fontWeight: "700",
             marginBottom: "15px",
             letterSpacing: "1px",
@@ -356,10 +374,10 @@ function Job() {
         <p
           style={{
             fontSize: "18px",
-            color: "#8C5C3C",
+            color: theme.colors.muted,
             maxWidth: "700px",
             margin: "0 auto",
-            fontFamily: "'Martel', serif",
+            fontFamily: theme.fonts.serif,
           }}
         >
           My professional journey across tech, interpretation, and entrepreneurship
@@ -404,12 +422,12 @@ function Job() {
           }
           
           .job-logo {
-            width: 80px !important;
-            height: 80px !important;
+            width: 88px !important;
+            height: 88px !important;
           }
           
           .job-title {
-            font-size: 11px !important;
+            font-size: 20px !important;
           }
           
           .job-badges {
@@ -422,7 +440,7 @@ function Job() {
           }
           
           .job-responsibilities {
-            font-size: 8px !important;
+            font-size: 14px !important;
           }
         }
       `}</style>

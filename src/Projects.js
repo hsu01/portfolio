@@ -1,16 +1,17 @@
 import React from "react";
+import { theme } from "./theme";
 
 // Reusable ProjectCard Component with Modern Design
 const ProjectCard = ({ title, period, description, technologies, githubLink, websiteLink, imageUrl, index }) => (
   <div
     style={{
-      background: 'rgba(255, 255, 255, 0.9)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '20px',
+      background: theme.colors.panel,
+      backdropFilter: 'blur(18px)',
+      borderRadius: theme.radii.lg,
       padding: '35px',
       marginBottom: '40px',
-      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-      border: '1px solid rgba(255, 255, 255, 0.5)',
+      boxShadow: theme.shadows.soft,
+      border: `1px solid ${theme.colors.line}`,
       transition: 'all 0.4s ease',
       display: 'flex',
       gap: '40px',
@@ -21,11 +22,11 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
     className="project-card"
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = 'translateY(-8px)';
-      e.currentTarget.style.boxShadow = '0 15px 45px rgba(169, 113, 85, 0.15)';
+      e.currentTarget.style.boxShadow = theme.shadows.glow;
     }}
     onMouseLeave={(e) => {
       e.currentTarget.style.transform = 'translateY(0)';
-      e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
+      e.currentTarget.style.boxShadow = theme.shadows.soft;
     }}
   >
     {/* Card Content */}
@@ -34,11 +35,11 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
       <h2
         style={{
           fontSize: '32px',
-          background: 'linear-gradient(135deg, #A97155 0%, #BC7C7C 100%)',
+          background: theme.gradients.accent,
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           marginBottom: '12px',
-          fontFamily: 'Poppins',
+          fontFamily: theme.fonts.sans,
           fontWeight: '700',
         }}
         className="project-title"
@@ -51,13 +52,14 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
         style={{
           display: 'inline-block',
           padding: '6px 16px',
-          background: 'rgba(169, 113, 85, 0.1)',
-          borderRadius: '20px',
+          background: 'rgba(125, 184, 255, 0.12)',
+          borderRadius: theme.radii.pill,
           fontSize: '13px',
-          color: '#8C5C3C',
+          color: theme.colors.accentAlt,
           fontWeight: '600',
           marginBottom: '20px',
           fontStyle: 'italic',
+          border: `1px solid ${theme.colors.line}`,
         }}
       >
         📅 {period}
@@ -67,10 +69,10 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
       <p
         style={{
           fontSize: '16px',
-          color: '#555',
+          color: theme.colors.subtle,
           lineHeight: '1.8',
           marginBottom: '25px',
-          fontFamily: "'Martel', serif",
+          fontFamily: theme.fonts.sans,
         }}
         className="project-description"
       >
@@ -82,11 +84,12 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
         <p
           style={{
             fontSize: '13px',
-            color: '#8C5C3C',
+            color: theme.colors.accent,
             fontWeight: '700',
             marginBottom: '12px',
             textTransform: 'uppercase',
             letterSpacing: '1px',
+            fontFamily: theme.fonts.mono,
           }}
         >
           🛠️ Tech Stack
@@ -97,12 +100,12 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
               key={i}
               style={{
                 padding: '6px 14px',
-                background: 'linear-gradient(135deg, #F0DBC5 0%, #E8D5C4 100%)',
-                borderRadius: '20px',
+                background: 'rgba(234, 241, 255, 0.06)',
+                borderRadius: theme.radii.pill,
                 fontSize: '13px',
-                color: '#8C5C3C',
+                color: theme.colors.text,
                 fontWeight: '600',
-                border: '1px solid rgba(169, 113, 85, 0.2)',
+                border: `1px solid ${theme.colors.line}`,
               }}
             >
               {tech}
@@ -120,26 +123,26 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
             rel="noopener noreferrer"
             style={{
               padding: '12px 28px',
-              background: 'linear-gradient(135deg, #A97155 0%, #8C5C3C 100%)',
-              color: '#FFF',
+              background: theme.gradients.button,
+              color: theme.colors.darkText,
               textDecoration: 'none',
               borderRadius: '50px',
               fontWeight: '600',
               fontSize: '14px',
-              boxShadow: '0 8px 20px rgba(169, 113, 85, 0.3)',
+              boxShadow: theme.shadows.accent,
               transition: 'all 0.3s ease',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: theme.fonts.sans,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 12px 28px rgba(169, 113, 85, 0.4)';
+              e.currentTarget.style.boxShadow = theme.shadows.glow;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(169, 113, 85, 0.3)';
+              e.currentTarget.style.boxShadow = theme.shadows.accent;
             }}
           >
             <span>💻</span> View Code
@@ -152,27 +155,27 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
             rel="noopener noreferrer"
             style={{
               padding: '12px 28px',
-              background: 'rgba(255, 255, 255, 0.9)',
-              color: '#A97155',
+              background: 'rgba(234, 241, 255, 0.08)',
+              color: theme.colors.text,
               textDecoration: 'none',
               borderRadius: '50px',
               fontWeight: '600',
               fontSize: '14px',
-              border: '2px solid #A97155',
+              border: `1px solid ${theme.colors.lineStrong}`,
               transition: 'all 0.3s ease',
-              fontFamily: "'Poppins', sans-serif",
+              fontFamily: theme.fonts.sans,
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#A97155';
-              e.currentTarget.style.color = '#FFF';
+              e.currentTarget.style.background = 'rgba(121, 247, 212, 0.14)';
+              e.currentTarget.style.color = theme.colors.accentSoft;
               e.currentTarget.style.transform = 'translateY(-3px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)';
-              e.currentTarget.style.color = '#A97155';
+              e.currentTarget.style.background = 'rgba(234, 241, 255, 0.08)';
+              e.currentTarget.style.color = theme.colors.text;
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -199,7 +202,7 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
             height: '280px',
             objectFit: 'contain',
             borderRadius: '15px',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+            boxShadow: theme.shadows.accent,
             transition: 'transform 0.3s ease',
           }}
           className="project-image"
@@ -214,7 +217,7 @@ const ProjectCard = ({ title, period, description, technologies, githubLink, web
             right: '-10px',
             width: '60px',
             height: '60px',
-            background: 'linear-gradient(135deg, #BC7C7C 0%, #A97155 100%)',
+            background: theme.gradients.accent,
             borderRadius: '50%',
             filter: 'blur(20px)',
             opacity: 0.3,
@@ -235,7 +238,7 @@ function Projects() {
       technologies: "React Native, Firebase, Firestore, Google Maps API",
       githubLink: "https://github.com/nbphuccc/PurrfectMatch",
       websiteLink: null,
-      imageUrl: `${process.env.PUBLIC_URL}/purrfectmatch.png`
+      imageUrl: `${process.env.PUBLIC_URL}/purrfectmatch-new.png`
     },
     {
       title: "Campus Map Navigator",
@@ -249,11 +252,11 @@ function Projects() {
     {
       title: "Personal Portfolio Website ✨",
       period: "June 2024 – Present",
-      description: "You're looking at it right now! This website is my digital home where I showcase my projects, skills, and journey. Built with React and lots of custom CSS magic, it's a work in progress (mobile optimization coming soon!). Think of it as my creative playground where I experiment with design and code.",
+      description: "You're looking at it right now! This website is my digital home where I showcase my projects, skills, and journey. Built with React and lots of custom CSS magic, it's a work in progress which I'm always updating with my latest work experiences, projects, and stuff. Think of it as my creative playground where I experiment with design and code.",
       technologies: "React, HTML, CSS, JavaScript",
       githubLink: null,
       websiteLink: "https://hsu01.github.io/portfolio/",
-      imageUrl: `${process.env.PUBLIC_URL}/portfolio.png`
+      imageUrl: `${process.env.PUBLIC_URL}/portfolio-2026.png`
     },
     {
       title: "AI Pacman Pathfinding 👾",
@@ -269,9 +272,10 @@ function Projects() {
   return (
     <section
       id="projects"
+      className="section-shell"
       style={{
         padding: '80px 20px 60px',
-        background: 'linear-gradient(180deg, #FAF3E0 0%, #F0DBC5 100%)',
+        background: theme.gradients.section,
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -285,7 +289,7 @@ function Projects() {
           width: '400px',
           height: '400px',
           borderRadius: '50%',
-          background: 'rgba(188, 124, 124, 0.08)',
+          background: 'rgba(255, 138, 101, 0.12)',
           filter: 'blur(80px)',
         }}
       />
@@ -297,7 +301,7 @@ function Projects() {
           width: '350px',
           height: '350px',
           borderRadius: '50%',
-          background: 'rgba(169, 113, 85, 0.08)',
+          background: 'rgba(121, 247, 212, 0.12)',
           filter: 'blur(80px)',
         }}
       />
@@ -307,10 +311,10 @@ function Projects() {
         <h1
           style={{
             fontSize: '48px',
-            background: 'linear-gradient(135deg, #A97155 0%, #BC7C7C 100%)',
+            background: theme.gradients.accent,
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            fontFamily: "'Poppins', sans-serif",
+            fontFamily: theme.fonts.sans,
             fontWeight: '700',
             marginBottom: '15px',
             letterSpacing: '1px',
@@ -321,9 +325,9 @@ function Projects() {
         <p
           style={{
             fontSize: '18px',
-            color: '#8C5C3C',
+            color: theme.colors.muted,
             margin: '0 auto',
-            fontFamily: "'Martel', serif",
+            fontFamily: theme.fonts.serif,
           }}
         >
           A collection of things I've built with code, creativity, and a bit of caffeine ☕
@@ -384,7 +388,7 @@ function Projects() {
           }
           
           .project-description {
-            font-size: 12px !important;
+            font-size: 15px !important;
           }
           
           .tech-stack span {

@@ -1,4 +1,5 @@
 import React from "react";
+import { theme } from "./theme";
 
 function Education() {
   const educationData = [
@@ -8,6 +9,13 @@ function Education() {
       date: "September 2024 - June 2027",
       icon: "🎓",
       color: "#A97155",
+    },
+    {
+      title: "Minor in Business Administration",
+      institution: "University of Washington, Michael G. Foster School of Business",
+      date: "September 2024 - June 2027",
+      icon: "📈",
+      color: "#8C5C3C",
     },
     {
       title: "Microsoft Endowed Scholarship",
@@ -51,9 +59,10 @@ function Education() {
   return (
     <section
       id="education"
+      className="section-shell"
       style={{
         padding: "80px 20px 60px",
-        background: "linear-gradient(180deg, #FAF3E0 0%, #F0DBC5 100%)",
+        background: theme.gradients.section,
         position: "relative",
         overflow: "hidden",
       }}
@@ -67,7 +76,7 @@ function Education() {
           width: "400px",
           height: "400px",
           borderRadius: "50%",
-          background: "rgba(169, 113, 85, 0.05)",
+          background: "rgba(121, 247, 212, 0.12)",
           filter: "blur(100px)",
         }}
       />
@@ -77,10 +86,10 @@ function Education() {
         <h1
           style={{
             fontSize: "48px",
-            background: "linear-gradient(135deg, #A97155 0%, #BC7C7C 100%)",
+            background: theme.gradients.accent,
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
-            fontFamily: "'Poppins', sans-serif",
+            fontFamily: theme.fonts.sans,
             fontWeight: "700",
             marginBottom: "15px",
             letterSpacing: "1px",
@@ -91,9 +100,9 @@ function Education() {
         <p
           style={{
             fontSize: "18px",
-            color: "#8C5C3C",
+            color: theme.colors.muted,
             margin: "0 auto",
-            fontFamily: "'Martel', serif",
+            fontFamily: theme.fonts.serif,
           }}
         >
           The path that shaped my passion for technology and problem-solving
@@ -117,8 +126,8 @@ function Education() {
             top: "0",
             bottom: "0",
             width: "3px",
-            background: "linear-gradient(180deg, #A97155 0%, #BC7C7C 100%)",
-            opacity: "0.3",
+            background: theme.gradients.accent,
+            opacity: "0.55",
           }}
           className="timeline-line"
         />
@@ -143,13 +152,15 @@ function Education() {
                 top: "8px",
                 width: "35px",
                 height: "35px",
-                background: `linear-gradient(135deg, ${item.color} 0%, ${item.color}CC 100%)`,
+                background: item.isAward
+                  ? "linear-gradient(135deg, #ff8a65 0%, #ffd76a 100%)"
+                  : theme.gradients.accent,
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: "18px",
-                boxShadow: `0 4px 15px ${item.color}40`,
+                boxShadow: theme.shadows.accent,
                 zIndex: 2,
               }}
               className="timeline-dot"
@@ -160,23 +171,23 @@ function Education() {
             {/* Content Card */}
             <div
               style={{
-                background: "rgba(255, 255, 255, 0.8)",
-                backdropFilter: "blur(10px)",
-                borderRadius: "15px",
+                background: theme.colors.panel,
+                backdropFilter: "blur(18px)",
+                borderRadius: theme.radii.md,
                 padding: "25px 30px",
-                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
-                border: "1px solid rgba(255, 255, 255, 0.5)",
+                boxShadow: theme.shadows.soft,
+                border: `1px solid ${theme.colors.line}`,
                 transition: "all 0.3s ease",
                 position: "relative",
               }}
               className="timeline-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateX(10px)";
-                e.currentTarget.style.boxShadow = "0 8px 30px rgba(169, 113, 85, 0.15)";
+                e.currentTarget.style.boxShadow = theme.shadows.glow;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateX(0)";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.08)";
+                e.currentTarget.style.boxShadow = theme.shadows.soft;
               }}
             >
               {/* Award Badge */}
@@ -186,13 +197,13 @@ function Education() {
                     position: "absolute",
                     top: "-12px",
                     right: "20px",
-                    background: "linear-gradient(135deg, #FFD700 0%, #FFA500 100%)",
-                    color: "#FFF",
+                    background: "linear-gradient(135deg, #ffd76a 0%, #ff8a65 100%)",
+                    color: theme.colors.darkText,
                     padding: "5px 15px",
                     borderRadius: "20px",
                     fontSize: "12px",
                     fontWeight: "700",
-                    boxShadow: "0 4px 15px rgba(255, 215, 0, 0.4)",
+                    boxShadow: "0 8px 24px rgba(255, 215, 106, 0.24)",
                     textTransform: "uppercase",
                     letterSpacing: "1px",
                   }}
@@ -207,12 +218,13 @@ function Education() {
                 style={{
                   display: "inline-block",
                   padding: "4px 12px",
-                  background: `${item.color}15`,
+                  background: item.isAward ? "rgba(255, 215, 106, 0.12)" : "rgba(125, 184, 255, 0.12)",
                   borderRadius: "15px",
                   fontSize: "12px",
-                  color: item.color,
+                  color: item.isAward ? theme.colors.gold : theme.colors.accentAlt,
                   fontWeight: "600",
                   marginBottom: "12px",
+                  border: `1px solid ${theme.colors.line}`,
                 }}
               >
                 📅 {item.date}
@@ -222,9 +234,9 @@ function Education() {
               <h2
                 style={{
                   fontSize: "22px",
-                  color: "#6C5B5B",
+                  color: theme.colors.text,
                   marginBottom: "10px",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: theme.fonts.sans,
                   fontWeight: "600",
                   lineHeight: "1.3",
                 }}
@@ -237,9 +249,9 @@ function Education() {
               <p
                 style={{
                   fontSize: "16px",
-                  color: "#8A7A7A",
+                  color: theme.colors.muted,
                   lineHeight: "1.6",
-                  fontFamily: "'Martel', serif",
+                  fontFamily: theme.fonts.sans,
                   margin: 0,
                 }}
                 className="timeline-institution"

@@ -51,5 +51,3 @@ Email: hsu01@uw.edu
 - Animations: AOS library
 
 ⭐ Star this repo if you found it helpful!
-
-Made with ❤️ and ☕ by Hsu

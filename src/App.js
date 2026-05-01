@@ -17,16 +17,13 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="app-shell">
        <Navbar />
        <About />
        <Job />
        <Education />
        <Projects />
        <Contact />
-
-
-
   </div>
   );
 }
